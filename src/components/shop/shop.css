@@ -1,0 +1,36 @@
+.product__item__pic{
+    height: 280px;
+    width: 180px;
+}
+.product__item__pic img{
+    max-height: 240px;
+    object-fit: contain;
+}
+.cartimage img{
+    object-fit: contain;
+    max-height: 170px;
+    max-width: 200px;
+}
+.carouselimg{
+    width: 100%;
+    max-height: 300px;
+}
+.carouselimg img{
+    height: 250px;
+    object-fit: contain;
+}
+.price{
+    font-weight: 700;
+    color: black;
+}
+.para{
+    font-weight: 800;
+    font-size: 15px;
+    color: black;
+}
+.carouselimg img:hover{
+    
+        opacity: 0.3;
+        transition: .5s;
+    
+}

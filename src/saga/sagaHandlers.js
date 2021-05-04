@@ -1,6 +1,7 @@
 import { fetchProduct } from "./requestHandlers";
 import { takeLatest, call, put } from "redux-saga/effects";
 import { ADD_TO_CART, FETCH_CART, FETCH_PRODUCTS_FAILURE, FETCH_PRODUCTS_SUCCESS , GET_BY_PRODUCT_CAT, REMOVE_ITEM, SET_PRICE, SHOW_PROD } from "./action.types";
+import { addtocart, ShowProduct } from "./actions";
 
 // worker saga: makes the api call when watcher saga sees the action
 export function* fetchProdSaga() {
@@ -16,9 +17,9 @@ export function* fetchProdSaga() {
       yield put({ type: FETCH_PRODUCTS_FAILURE, error });
     }
   }
-export function* showProdSaga(id) {
+export function* showProdSaga(action) {
   try {
-    yield put ({type : SHOW_PROD , id })
+    yield put (ShowProduct(action.payload))
   } catch (error) {
     console.log(error);
   }
@@ -39,11 +40,10 @@ export function* setPrice(payload){
     console.log(error)
   }
 }
-export function* addTocart(payload){
+export function* addTocart(action){
   try {
-    console.log(payload);
-    window.localStorage.setItem("product", JSON.stringify(payload))
-    yield put ({type : ADD_TO_CART})
+    // console.log(payload);
+    yield put (addtocart(action.payload))
     
   } catch (error) {
     console.log(error)

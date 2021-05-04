@@ -3,15 +3,17 @@ import BreadCrumb from "../common components/BreadCrumb";
 import ShopProducts from "./ShopProducts";
 import SideBar from "./SideBar";
 import { useDispatch } from "react-redux";
-import { FETCH_ALL_PRODUCTS } from "../../action.types";
+import { FETCH_ALL_PRODUCTS } from "../../saga/action.types";
 
 function Shop() {
   const dispatch = useDispatch()
   const loaddata = async()=>{
     dispatch({type:FETCH_ALL_PRODUCTS})
+    window.location.hash = "shop" 
   }
   useEffect(()=>{
     loaddata()
+
   },[])
   
   return (

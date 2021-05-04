@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useDispatch } from "react-redux";
-import { REMOVE_ITEM } from "../../action.types";
+import { REMOVE_ITEM } from "../../saga/action.types";
 import "./shop.css";
 function AllCartItems() {
   const dispatch = useDispatch();

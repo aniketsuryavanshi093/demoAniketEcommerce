@@ -6,8 +6,12 @@ function SideBar() {
     const dispatch = useDispatch()
     const state = useSelector(state => state)
     const [latest, setlatest] = useState([]) 
+    console.log(state.Product)
     useEffect(()=>{
+      if(state.Product){
         setlatest(state.Product.slice(0,3))
+
+      }
     },[])
     console.log(latest);
     const [min, setmin] = useState(0)
@@ -20,10 +24,10 @@ function SideBar() {
                         <div className="sidebar__item">
                             <h4>Department</h4>
                             <ul>
-                                <li><NavLink  onClick = {()=>dispatch({type: "GET_BY_PRODUCT_CAT" , category:`men's clothing`})} to="#">Mens Clothing</NavLink></li>
-                                <li><NavLink onClick = {()=>dispatch({type: "GET_BY_PRODUCT_CAT" , category:`jewelery`})} to="#">Jwellery</NavLink></li>
-                                <li><NavLink onClick = {()=>dispatch({type: "GET_BY_PRODUCT_CAT" , category:`electronics`})} to="#">Electronics</NavLink></li>
-                                <li><NavLink onClick = {()=>dispatch({type: "GET_BY_PRODUCT_CAT" , category:`women's clothing`})} to="#">Women's Clothing</NavLink></li>
+                                <li><NavLink   className="department" onClick = {()=>dispatch({type: "GET_BY_PRODUCT_CAT" , category:`men's clothing`})} to="#"><a href="#filter__item">Mens Clothing</a></NavLink></li>
+                                <li><NavLink className="department" onClick = {()=>dispatch({type: "GET_BY_PRODUCT_CAT" , category:`jewelery`})} to="#"><a href="#filter__item">Jwellery</a></NavLink></li>
+                                <li><NavLink className="department" onClick = {()=>dispatch({type: "GET_BY_PRODUCT_CAT" , category:`electronics`})} to="#"><a href="#filter__item">Electronics</a></NavLink></li>
+                                <li><NavLink className="department" onClick = {()=>dispatch({type: "GET_BY_PRODUCT_CAT" , category:`women's clothing`})} to="#"><a href="#filter__item">Women's Clothing</a></NavLink></li>
                                
                             </ul>
                         </div>

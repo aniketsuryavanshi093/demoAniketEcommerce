@@ -5,6 +5,7 @@ import AllCartItems from './AllCartItems'
 function Cart() {
     let quantity = 0;
     let total = 0;
+    window.location.hash = "cart"
       const proddata  = JSON.parse(localStorage.getItem("product"))
       proddata.map((elem)=>{
           quantity = elem.quantity  

@@ -2,7 +2,9 @@ import React, { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useParams } from "react-router";
 import { NavLink } from "react-router-dom";
-import { SHOW_PROD } from "../../../action.types";
+import { FETCH_ALL_PRODUCTS, SHOW_PROD } from "../../../saga/action.types";
+import { addtocart } from "../../../saga/actions";
+// import { SHOW_PROD } from "../../../action.types";
 import ProdQuant from "./ProdQuant";
 import ShopRelatedProd from "./ShopRelatedProd";
 
@@ -18,6 +20,8 @@ function Shopdetail() {
      }
     const state = useSelector(state => state)
     useEffect(()=>{
+      
+            
             setsetail(state.singleProd)
     },[state])
 
@@ -61,7 +65,7 @@ function Shopdetail() {
                         <div className="product__details__quantity">
                           <ProdQuant inpval= {quantity} clickmin = {minhandler} clickmax={maxhandler} ></ProdQuant>
                         </div>
-                        <button onClick={()=>dispatch({type:"ADD_TO_CART" , payload:product })} className="primary-btn">ADD TO CART</button>
+                        <button onClick={()=>dispatch(addtocart(product))} className="primary-btn">ADD TO CART</button>
                         <ul>
                             <li><b>Availability</b> <span>In Stock</span></li>
                             <li><b>Shipping</b> <span>01 day shipping. <samp>Free pickup today</samp></span></li>

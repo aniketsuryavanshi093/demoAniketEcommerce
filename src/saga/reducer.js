@@ -38,7 +38,7 @@ export function reducer(state = initialState, action) {
     case FETCH_PRODUCTS_FAILURE:
       return { ...state, Product: null, error: action.error };
     case SHOW_PROD:
-      const product = state.Product.filter((elem) => elem.id == action.id);
+      const product = state.Product && state.Product.filter((elem) => elem.id == action.id);
       return {
         ...state,
         singleProd: {

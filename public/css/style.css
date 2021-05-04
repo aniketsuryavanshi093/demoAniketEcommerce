@@ -135,6 +135,7 @@ ol {
 }
 
 .set-bg {
+	
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: top center;
@@ -459,7 +460,7 @@ ol {
 	padding: 5px 15px;
 }
 
-.header__menu ul li.active a {
+.header__menu ul a.active  {
 	color: #7fad39;
 }
 

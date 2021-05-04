@@ -10,8 +10,8 @@ import createSagaMiddleware from "redux-saga";
 
 // // dev tools middleware
 
-import { reducer } from "./reducer";
-import { watcherSaga } from "./saga";
+import { reducer } from "./saga/reducer";
+import { watcherSaga } from "./saga/saga";
 
 const reduxDevTools =
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
